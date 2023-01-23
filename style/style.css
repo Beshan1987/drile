@@ -1,0 +1,178 @@
+@charset "UTF-8";
+/* federo-regular - latin */
+@font-face {
+  font-family: "Federo";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/federo-v19-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""), url("/fonts/federo-v19-latin-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/federo-v19-latin-regular.woff2") format("woff2"), url("/fonts/federo-v19-latin-regular.woff") format("woff"), url("/fonts/federo-v19-latin-regular.ttf") format("truetype"), url("/fonts/federo-v19-latin-regular.svg#Federo") format("svg"); /* Legacy iOS */
+}
+/* open-sans-regular - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/open-sans-v34-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""), url("/fonts/open-sans-v34-latin-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/open-sans-v34-latin-regular.woff2") format("woff2"), url("/fonts/open-sans-v34-latin-regular.woff") format("woff"), url("/fonts/open-sans-v34-latin-regular.ttf") format("truetype"), url("/fonts/open-sans-v34-latin-regular.svg#OpenSans") format("svg"); /* Legacy iOS */
+}
+/* open-sans-600 - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/open-sans-v34-latin-600.eot"); /* IE9 Compat Modes */
+  src: local(""), url("/fonts/open-sans-v34-latin-600.eot?#iefix") format("embedded-opentype"), url("/fonts/open-sans-v34-latin-600.woff2") format("woff2"), url("/fonts/open-sans-v34-latin-600.woff") format("woff"), url("/fonts/open-sans-v34-latin-600.ttf") format("truetype"), url("/fonts/open-sans-v34-latin-600.svg#OpenSans") format("svg"); /* Legacy iOS */
+}
+/* potta-one-regular - latin */
+@font-face {
+  font-family: "Potta One";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/potta-one-v16-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""), url("/fonts/potta-one-v16-latin-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/potta-one-v16-latin-regular.woff2") format("woff2"), url("/fonts/potta-one-v16-latin-regular.woff") format("woff"), url("/fonts/potta-one-v16-latin-regular.ttf") format("truetype"), url("/fonts/potta-one-v16-latin-regular.svg#PottaOne") format("svg"); /* Legacy iOS */
+}
+.nav-inner .nav-label-inner a {
+  font-family: "Potta One";
+  font-style: normal;
+  font-weight: 400;
+}
+
+.nav-inner .nav-bars-list a:hover, .nav-inner .nav-main-list .nav-main-item a:hover, .nav-inner .nav-label-inner a:hover {
+  transition: 0.5s;
+  opacity: 0.7;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  color: #161513;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #161513;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+} /*# sourceMappingURL=reset.css.map */
+.wrapper {
+  background: #ffffff;
+}
+
+._container {
+  max-width: 1110px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  letter-spacing: -0.035em;
+  padding-top: 2.2522522523%;
+}
+.nav-inner .nav-label-inner a {
+  font-size: calc(15px + 2vw);
+  line-height: 144.7368421053%;
+  letter-spacing: inherit;
+  color: #565759;
+  transition: 0.5s;
+}
+.nav-inner .nav-main-list {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  gap: 2vw;
+}
+.nav-inner .nav-main-list .nav-main-item a {
+  color: #697391;
+  letter-spacing: inherit;
+  transition: 0.5s;
+}
+.nav-inner .nav-bars-list {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  gap: 2vw;
+  transition: 0.5s;
+}
+.nav-inner .nav-bars-list a {
+  transition: 0.5s;
+}/*# sourceMappingURL=style.css.map */

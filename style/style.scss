@@ -1,0 +1,54 @@
+@import "fonts";
+@import "variables";
+@import "reset";
+
+.wrapper {
+	background: #ffffff;
+}
+._container {
+	max-width: 1110px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0 5px;
+}
+
+.nav-inner {
+	@include flex(center, space-between);
+	letter-spacing: -0.035em;
+	padding-top: calc(25 / 1110 * 100%);
+	.nav-label-inner a {
+		@extend %font_potta;
+		@include fonts_propetiers(calc(15px + 2vw), calc(55 / 38 * 100%));
+		letter-spacing: inherit;
+		color: #565759;
+		transition: 0.5s;
+		&:hover {
+			@extend %hover_icon;
+		}
+	}
+	.nav-main-list {
+		@include flex(center, stretch);
+		gap: 2vw;
+		.nav-main-item a {
+			color: #697391;
+			letter-spacing: inherit;
+			transition: 0.5s;
+			&:hover {
+				@extend %hover_icon;
+			}
+		}
+	}
+	.nav-bars-list {
+		@include flex(center, stretch);
+		gap: 2vw;
+		transition: 0.5s;
+		a {
+			transition: 0.5s;
+			&:hover {
+				@extend %hover_icon;
+			}
+		}
+	}
+}
+
+@import "media";
