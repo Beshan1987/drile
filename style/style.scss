@@ -4,6 +4,8 @@
 
 .wrapper {
 	background: #ffffff;
+	z-index: 10;
+	position: relative;
 }
 ._container {
 	max-width: 1110px;
@@ -13,7 +15,7 @@
 }
 
 .nav-inner {
-	@include flex(center, space-between);
+	@include flex_row(center, space-between);
 	letter-spacing: -0.035em;
 	padding-top: calc(25 / 1110 * 100%);
 	.nav-label-inner a {
@@ -27,7 +29,7 @@
 		}
 	}
 	.nav-main-list {
-		@include flex(center, stretch);
+		@include flex_row(center, stretch);
 		gap: 2vw;
 		.nav-main-item a {
 			color: #697391;
@@ -39,13 +41,177 @@
 		}
 	}
 	.nav-bars-list {
-		@include flex(center, stretch);
+		@include flex_row(center, stretch);
 		gap: 2vw;
 		transition: 0.5s;
 		a {
 			transition: 0.5s;
 			&:hover {
 				@extend %hover_icon;
+			}
+		}
+	}
+}
+
+.main {
+	position: relative;
+	z-index: 100;
+	&::after {
+		content: "";
+		position: absolute;
+		width: 65%;
+		height: 90%;
+		top: 75%;
+		right: 0;
+		background-image: url(/img/bg_main_shifted.png);
+		z-index: -10;
+	}
+}
+.main_inner {
+	@include flex_row(center, space-between);
+	padding-top: calc(60 / 1110 * 100%);
+	z-index: 100;
+	.main__bg {
+		flex: 0 1 50%;
+		.main_img {
+			object-fit: cover;
+		}
+	}
+	.main__title {
+		@include flex_column(stretch, center);
+		flex: 0 1 45%;
+		gap: 2vw;
+		min-height: 400px;
+
+		.main__name {
+			@extend %font_Federo;
+			@include fonts_propetiers(calc(20px + 2vw), calc(60 / 50 * 100%));
+			color: #3a3a3a;
+		}
+		.main__name-bt {
+			@include flex_row(stretch, stretch);
+			width: 70%;
+			background: #434343;
+			border: none;
+			.main__link {
+				margin: 0 auto;
+				text-decoration: none;
+				@extend %font_OpenSans_400;
+				@include fonts_propetiers(calc(8px + 0.5vw), calc(22 / 16 * 100%));
+				padding: 8px 17px;
+				text-transform: uppercase;
+				letter-spacing: -0.035em;
+				color: #ffffff;
+				&:hover {
+					@extend %hover_icon;
+				}
+			}
+		}
+	}
+}
+
+.sellers {
+	position: relative;
+	z-index: 100;
+	.title_section_sellers {
+		padding-top: calc(84 / 1110 * 100%);
+		margin-bottom: calc(41 / 1110 * 100%);
+		.title_section-txt {
+			text-align: center;
+			@extend %font_Federo;
+			@include fonts_propetiers(calc(15px + 2vw), calc(50 / 40 * 100%));
+			letter-spacing: 0.02em;
+			color: #3a3a3a;
+		}
+	}
+}
+.sellers__main {
+	@include flex_row(stretch, space-between);
+	flex-wrap: wrap;
+	gap: 2vw;
+	.sellers__main-inner {
+		@include flex_column(center, stretch);
+		gap: 1vw;
+		flex: 0 1 23%;
+		position: relative;
+		padding: calc(71 / 1110 * 100%) 0 calc(25 / 1110 * 100%) 0;
+		background: #ffffff;
+		box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+		&:nth-child(5),
+		&:nth-child(6),
+		&:nth-child(7) {
+			flex: 1;
+			.sellers__features {
+				width: calc(55 / (1110 * 0.25) * 100%);
+			}
+		}
+		&:nth-child(2),
+		&:nth-child(3),
+		&:nth-child(6) {
+			.sellers__features {
+				display: none;
+			}
+		}
+		&:nth-child(4) {
+			.sellers__features {
+				.discont {
+					display: none;
+				}
+			}
+		}
+
+		.sellers-img-wrap {
+			@include flex_column(center, stretch);
+			gap: 1vw;
+			margin: 0 auto;
+			text-align: center;
+			.sellers-img-wrap {
+				object-fit: contain;
+				height: 182px;
+			}
+			.sellers_item_name {
+				@extend %font_OpenSans_400;
+				@include fonts_propetiers(calc(8px + 0.5vw), calc(22 / 16 * 100%));
+				letter-spacing: -0.035em;
+				color: #2a2a2b;
+			}
+			.sellers_item_price {
+				@extend %font_Federo;
+				@include fonts_propetiers(calc(8px + 0.5vw), calc(22 / 16 * 100%));
+				letter-spacing: 0.02em;
+				color: #8c8c8c;
+			}
+		}
+		.sellers__features {
+			position: absolute;
+			top: calc(14 / (1110 * 0.25) * 100%);
+			right: 0;
+			width: calc(75 / (1110 * 0.25) * 100%);
+			.sellers__features-item {
+				text-align: center;
+				@extend %font_OpenSans_400;
+				@include fonts_propetiers(calc(8px + 0.5vw), calc(22 / 16 * 100%));
+				letter-spacing: -0.035em;
+				color: #ffffff;
+			}
+			.special {
+				background: #f29731;
+				margin-bottom: 5px;
+			}
+			.discont {
+				background: #9e0b0f;
+			}
+		}
+		.sellers__tools-list {
+			position: absolute;
+			bottom: calc(80 / (1110 * 0.25) * 100%);
+			right: 5px;
+			@include flex_column(center, stretch);
+			gap: 0.5vw;
+
+			.sellers__tools-item-wrap {
+				box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+				padding: 5px;
 			}
 		}
 	}
