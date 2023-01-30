@@ -37,13 +37,13 @@
   font-weight: 400;
 }
 
-.sellers__main .sellers__main-inner .sellers-img-wrap .sellers_item_price, .sellers .title_section_sellers .title_section-txt, .main_inner .main__title .main__name {
+.deal__main-list .deal__main-item:nth-child(2) .deal__main-price, .sellers__main .sellers__main-inner .sellers-img-wrap .sellers_item_price, .sellers .title_section_sellers .title_section-txt, .main_inner .main__title .main__name {
   font-family: "Federo";
   font-style: normal;
   font-weight: 400;
 }
 
-.sellers__main .sellers__main-inner .sellers__features .sellers__features-item, .sellers__main .sellers__main-inner .sellers-img-wrap .sellers_item_name, .main_inner .main__title .main__name-bt .main__link {
+.deal__main-list .deal__main-item:nth-child(2) .deal__main-bt-shop .deal__main-bt-shop a, .deal__main-list .deal__main-item:nth-child(2) .deal__main-discription, .deal__main-list .deal__main-item:nth-child(2) .deal__main-bt-inner .deal__main-bt a, .sellers__main .sellers__main-inner .sellers__features .sellers__features-item, .sellers__main .sellers__main-inner .sellers-img-wrap .sellers_item_name, .main_inner .main__title .main__name-bt .main__link {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
@@ -153,6 +153,8 @@ a {
   height: 100%;
   margin: 0 auto;
   padding: 0 5px;
+  height: 100%;
+  width: 100%;
 }
 
 .nav-inner {
@@ -254,6 +256,7 @@ a {
 .sellers {
   position: relative;
   z-index: 100;
+  margin-bottom: 13.3333333333%;
 }
 .sellers .title_section_sellers {
   padding-top: 7.5675675676%;
@@ -357,4 +360,84 @@ a {
 .sellers__main .sellers__main-inner .sellers__tools-list .sellers__tools-item-wrap {
   box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
   padding: 5px;
+}
+
+.deal {
+  background: url(/img/bg_main_deal.png) no-repeat right center;
+}
+
+.deal__main-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.deal__main-list .deal__main-item {
+  flex: 0 1 47.1171171171%;
+}
+.deal__main-list .deal__main-item .deal__main-img-wrap {
+  background: url(/img/bg__couch.png) no-repeat center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 19.120458891% 0;
+}
+.deal__main-list .deal__main-item .deal__main-img-wrap .deal__main-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.deal__main-list .deal__main-item:nth-child(2) {
+  flex: 0 1 47.1171171171%;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: stretch;
+  gap: 2vw;
+}
+.deal__main-list .deal__main-item:nth-child(2) .deal__main-bt-inner .deal__main-bt {
+  width: 39.0057361377%;
+  background: #8096bc;
+  border: none;
+  padding: 5px 0;
+}
+.deal__main-list .deal__main-item:nth-child(2) .deal__main-bt-inner .deal__main-bt a {
+  text-decoration: none;
+  font-size: calc(8px + 0.5vw);
+  line-height: 137.5%;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+}
+.deal__main-list .deal__main-item:nth-child(2) .deal__main-price {
+  font-size: calc(20px + 2vw);
+  line-height: 111.1111111111%;
+}
+.deal__main-list .deal__main-item:nth-child(2) .deal__main-price span:nth-child(2) {
+  color: #8096bc;
+}
+.deal__main-list .deal__main-item:nth-child(2) .deal__main-discription {
+  font-size: calc(8px + 0.5vw);
+  line-height: 137.5%;
+  color: #727272;
+}
+.deal__main-list .deal__main-item:nth-child(2) .deal__main-bt-shop .deal__main-bt-shop {
+  width: 23.326959847%;
+  background: #434343;
+}
+.deal__main-list .deal__main-item:nth-child(2) .deal__main-bt-shop .deal__main-bt-shop a {
+  text-decoration: none;
+  letter-spacing: -0.035em;
+  font-size: calc(8px + 0.5vw);
+  line-height: 137.5%;
+  color: #ffffff;
+  padding: 5px 0;
+}
+.deal__main-list .deal__main-item:nth-child(2) .deal__main-collection-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.deal__main-list .deal__main-item:nth-child(2) .deal__main-collection-list .deal__main-collectioт-item-wrap {
+  padding: 2.103250478% 3.8240917782%;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
 }/*# sourceMappingURL=style.css.map */

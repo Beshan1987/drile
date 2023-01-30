@@ -12,6 +12,8 @@
 	height: 100%;
 	margin: 0 auto;
 	padding: 0 5px;
+	height: 100%;
+	width: 100%;
 }
 
 .nav-inner {
@@ -113,6 +115,7 @@
 .sellers {
 	position: relative;
 	z-index: 100;
+	margin-bottom: calc(148 / 1110 * 100%);
 	.title_section_sellers {
 		padding-top: calc(84 / 1110 * 100%);
 		margin-bottom: calc(41 / 1110 * 100%);
@@ -212,6 +215,80 @@
 			.sellers__tools-item-wrap {
 				box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
 				padding: 5px;
+			}
+		}
+	}
+}
+
+.deal {
+	background: url(/img/bg_main_deal.png) no-repeat right center;
+}
+
+.deal__main-list {
+	@include flex_row(center, space-between);
+	.deal__main-item {
+		flex: 0 1 calc(523 / 1110 * 100%);
+		.deal__main-img-wrap {
+			background: url(/img/bg__couch.png) no-repeat center;
+			background-size: cover;
+			@include flex_row(center, center);
+			padding: calc(100 / 523 * 100%) 0;
+			.deal__main-img {
+				object-fit: cover;
+			}
+		}
+	}
+	.deal__main-item:nth-child(2) {
+		flex: 0 1 calc(523 / 1110 * 100%);
+		@include flex_column(stretch, stretch);
+		gap: 2vw;
+		.deal__main-bt-inner {
+			.deal__main-bt {
+				width: calc(204 / 523 * 100%);
+				background: #8096bc;
+				border: none;
+				padding: 5px 0;
+				a {
+					text-decoration: none;
+					@extend %font_OpenSans_400;
+					@include fonts_propetiers(calc(8px + 0.5vw), calc(22 / 16 * 100%));
+					letter-spacing: -0.035em;
+					color: #ffffff;
+				}
+			}
+		}
+		.deal__main-price {
+			@extend %font_Federo;
+			@include fonts_propetiers(calc(20px + 2vw), calc(50 / 45 * 100%));
+			span:nth-child(2) {
+				color: #8096bc;
+			}
+		}
+		.deal__main-discription {
+			@extend %font_OpenSans_400;
+			@include fonts_propetiers(calc(8px + 0.5vw), calc(22 / 16 * 100%));
+			color: #727272;
+		}
+		.deal__main-bt-shop {
+			.deal__main-bt-shop {
+				width: calc(122 / 523 * 100%);
+				background: #434343;
+				a {
+					text-decoration: none;
+					letter-spacing: -0.035em;
+					@extend %font_OpenSans_400;
+					@include fonts_propetiers(calc(8px + 0.5vw), calc(22 / 16 * 100%));
+					color: #ffffff;
+					padding: 5px 0;
+				}
+			}
+		}
+		.deal__main-collection-list {
+			@include flex_row(center, space-between);
+			.deal__main-collectioт-item-wrap {
+				padding: calc(11 / 523 * 100%) calc(20 / 523 * 100%);
+				box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+				background: #ffffff;
 			}
 		}
 	}
